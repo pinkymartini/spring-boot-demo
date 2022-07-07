@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path= "api/v1/student")
+@CrossOrigin("*") //enables react thing
 public class StudentController {
     private final StudentService studentService;
 

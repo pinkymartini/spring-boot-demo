@@ -13,7 +13,7 @@ import static java.time.Month.JANUARY;
 @Configuration
 public class StudentConfig {
 
-    @Bean
+    @Bean //command line runner, beanlerin hepsini run edecek.
     CommandLineRunner commandLineRunner(StudentRepository repository){
         return args -> {
             Student mariam = new Student(
