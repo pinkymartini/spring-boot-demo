@@ -51,7 +51,7 @@ public class StudentService {
         studentRepository.deleteById(studentId);
     }
 
-    @Transactional //when we have this annotation we dont need query i think.
+    @Transactional //when we have this annotation we dont need query i think. //use this if you wanna use setters.
     public void updateStudent(Long studentId, String name, String email) {
 
         Student student = studentRepository.findById(studentId).orElseThrow(()-> new IllegalStateException(
@@ -72,5 +72,11 @@ public class StudentService {
 
             student.setEmail(email);
         }
+    }
+
+    public Optional<Student> getStudentById(Long studentId) {
+
+        Optional<Student> student= studentRepository.findById(studentId);
+        return student;
     }
 }
